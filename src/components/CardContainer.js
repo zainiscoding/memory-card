@@ -68,11 +68,6 @@ const CardContainer = (props) => {
     addToClickedCards(e);
   }
 
-  function mouseEnterHandler(e) {
-    console.log('mouse');
-    e.target.className = 'growCard';
-  }
-
   return (
     <>
       <div id='cardContainer'>
@@ -82,7 +77,7 @@ const CardContainer = (props) => {
               key={uniqid()}
               className='card'
               onClick={clickHandler}
-              onMouseEnter={mouseEnterHandler}
+              onMouseEnter={(e) => (e.target.className = 'growCard')}
             >
               <img src={card.image} alt={card.name} className='cardImage'></img>
               <p className='cardText'>{card.name}</p>
