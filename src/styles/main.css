@@ -1,0 +1,59 @@
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  height: 90vh;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 4rem;
+  margin-bottom: 2%;
+}
+
+#cardContainer {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  place-content: space-between;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  place-content: space-between;
+}
+
+.cardImage {
+  pointer-events: none;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+.cardText {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
