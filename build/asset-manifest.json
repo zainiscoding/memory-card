@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/memory-cards/static/css/main.664c1851.chunk.css",
+    "main.js": "/memory-cards/static/js/main.339e8729.chunk.js",
+    "main.js.map": "/memory-cards/static/js/main.339e8729.chunk.js.map",
+    "runtime-main.js": "/memory-cards/static/js/runtime-main.017999bb.js",
+    "runtime-main.js.map": "/memory-cards/static/js/runtime-main.017999bb.js.map",
+    "static/js/2.fa6d92ac.chunk.js": "/memory-cards/static/js/2.fa6d92ac.chunk.js",
+    "static/js/2.fa6d92ac.chunk.js.map": "/memory-cards/static/js/2.fa6d92ac.chunk.js.map",
+    "index.html": "/memory-cards/index.html",
+    "static/css/main.664c1851.chunk.css.map": "/memory-cards/static/css/main.664c1851.chunk.css.map",
+    "static/js/2.fa6d92ac.chunk.js.LICENSE.txt": "/memory-cards/static/js/2.fa6d92ac.chunk.js.LICENSE.txt",
+    "static/media/bbq.e4131c5c.jpg": "/memory-cards/static/media/bbq.e4131c5c.jpg",
+    "static/media/burger.5a21438d.jpg": "/memory-cards/static/media/burger.5a21438d.jpg",
+    "static/media/chickenSkewers.967ab7c4.jpg": "/memory-cards/static/media/chickenSkewers.967ab7c4.jpg",
+    "static/media/curry.7d5546dd.jpg": "/memory-cards/static/media/curry.7d5546dd.jpg",
+    "static/media/frenchFries.afbcf5a3.jpg": "/memory-cards/static/media/frenchFries.afbcf5a3.jpg",
+    "static/media/friedChicken.69baf17a.jpg": "/memory-cards/static/media/friedChicken.69baf17a.jpg",
+    "static/media/pasta.c032152d.jpg": "/memory-cards/static/media/pasta.c032152d.jpg",
+    "static/media/pizza.ba8927aa.jpg": "/memory-cards/static/media/pizza.ba8927aa.jpg",
+    "static/media/ramen.02f0dadf.jpg": "/memory-cards/static/media/ramen.02f0dadf.jpg",
+    "static/media/soupDumplings.450d119d.jpg": "/memory-cards/static/media/soupDumplings.450d119d.jpg",
+    "static/media/sushi.a790d09e.jpg": "/memory-cards/static/media/sushi.a790d09e.jpg",
+    "static/media/tacos.049a69ab.jpg": "/memory-cards/static/media/tacos.049a69ab.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.017999bb.js",
+    "static/js/2.fa6d92ac.chunk.js",
+    "static/css/main.664c1851.chunk.css",
+    "static/js/main.339e8729.chunk.js"
+  ]
+}
