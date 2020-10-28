@@ -12,7 +12,7 @@
     "uniqid": "^5.2.0",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "http://zainiscoding.github.io/memory-card",
+  "homepage": "http://zainiscoding.github.io/memory-cards",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
