@@ -1,41 +1,71 @@
 import React, { useEffect, useState } from 'react';
+import bbq from './images/bbq.jpg';
+import burger from './images/burger.jpg';
+import chickenSkewers from './images/chickenSkewers.jpg';
+import curry from './images/curry.jpg';
+import frenchFries from './images/frenchFries.jpg';
+import friedChicken from './images/friedChicken.jpg';
+import pasta from './images/pasta.jpg';
+import pizza from './images/pizza.jpg';
+import ramen from './images/ramen.jpg';
+import soupDumplings from './images/soupDumplings.jpg';
+import sushi from './images/sushi.jpg';
+import tacos from './images/tacos.jpg';
+var uniqid = require('uniqid');
 
-const CardContainer = () => {
+const CardContainer = (props) => {
   const [cardList, setCardList] = useState([
-    'mike',
-    'tyler',
-    'sull',
-    'luke',
-    'dean',
-    'garth',
-    'mitch',
-    'howie',
+    { name: 'BBQ', image: bbq },
+    { name: 'Burger', image: burger },
+    { name: 'Chicken Skewers', image: chickenSkewers },
+    { name: 'Curry', image: curry },
+    { name: 'French Fries', image: frenchFries },
+    { name: 'Fried Chicken', image: friedChicken },
+    { name: 'Pasta', image: pasta },
+    { name: 'Pizza', image: pizza },
+    { name: 'Ramen', image: ramen },
+    { name: 'Soup Dumplings', image: soupDumplings },
+    { name: 'Sushi', image: sushi },
+    { name: 'Tacos', image: tacos },
   ]);
+  const [clickedCards, setClickedCards] = useState([]);
+
+  //Initial shuffle on page load
+  useEffect(() => {
+    console.log('useEffect');
+    setCardList(shuffleCardList());
+    // eslint-disable-next-line
+  }, []);
 
   //An implementation of the knuth shuffle adapted from an answer by ashleedawg on StackOverflow
-
   function shuffleCardList() {
+    console.log('shuffled');
     const array = [...cardList];
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      const randomIndex = Math.floor(Math.random() * (i + 1));
+      [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
     }
     return array;
   }
 
-  function clickHandler() {
-    setCardList(shuffleCardList());
+  //Add a card to the list of clicked cards
+  function addToClickedCards(e) {
+    const targetCard = e.target.lastChild.textContent;
+
+    if (!clickedCards.includes(targetCard)) {
+      console.log("doesn't include");
+      setClickedCards([...clickedCards, targetCard]);
+      props.setScore(props.score + 1);
+    } else if (clickedCards.includes(targetCard)) {
+      props.setHighScore(clickedCards.length);
+      setClickedCards([]);
+      props.setScore(0);
+    }
   }
 
-  useEffect(() => {
+  function clickHandler(e) {
     setCardList(shuffleCardList());
-  }, []);
-
-  let clickedList = [];
-  function addToClickedList(e) {
-    console.log(e.target.firstChild.textContent);
-    clickedList.push(e.target.firstChild.textContent);
-    console.log(clickedList);
+    addToClickedCards(e);
   }
 
   return (
@@ -43,8 +73,9 @@ const CardContainer = () => {
       <div id='cardContainer'>
         {cardList.map((card) => {
           return (
-            <div className='card' onClick={clickHandler}>
-              <p>{card}</p>
+            <div key={uniqid()} className='card' onClick={clickHandler}>
+              <img src={card.image} alt={card.name} className='cardImage'></img>
+              <p className='cardText'>{card.name}</p>
             </div>
           );
         })}
