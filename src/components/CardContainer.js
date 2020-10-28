@@ -16,7 +16,7 @@ var uniqid = require('uniqid');
 const CardContainer = (props) => {
   const [cardList, setCardList] = useState([
     { name: 'BBQ', image: bbq },
-    { name: 'Burger', image: burger },
+    { name: 'Burgers', image: burger },
     { name: 'Chicken Skewers', image: chickenSkewers },
     { name: 'Curry', image: curry },
     { name: 'French Fries', image: frenchFries },
@@ -32,20 +32,21 @@ const CardContainer = (props) => {
 
   //Initial shuffle on page load
   useEffect(() => {
-    console.log('useEffect');
     setCardList(shuffleCardList());
     // eslint-disable-next-line
   }, []);
 
   //An implementation of the knuth shuffle adapted from an answer by ashleedawg on StackOverflow
   function shuffleCardList() {
-    console.log('shuffled');
-    const array = [...cardList];
-    for (let i = array.length - 1; i > 0; i--) {
+    const arrayToShuffle = [...cardList];
+    for (let i = arrayToShuffle.length - 1; i > 0; i--) {
       const randomIndex = Math.floor(Math.random() * (i + 1));
-      [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+      [arrayToShuffle[i], arrayToShuffle[randomIndex]] = [
+        arrayToShuffle[randomIndex],
+        arrayToShuffle[i],
+      ];
     }
-    return array;
+    return arrayToShuffle;
   }
 
   //Add a card to the list of clicked cards
@@ -53,7 +54,6 @@ const CardContainer = (props) => {
     const targetCard = e.target.lastChild.textContent;
 
     if (!clickedCards.includes(targetCard)) {
-      console.log("doesn't include");
       setClickedCards([...clickedCards, targetCard]);
       props.setScore(props.score + 1);
     } else if (clickedCards.includes(targetCard)) {
