@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div id='app'>
-      <Header />
+      <Header score={score} highScore={highScore} />
       <div id='gameContainer'>
         <CardContainer
           score={score}
@@ -19,7 +19,7 @@ function App() {
           setHighScore={setHighScore}
           highScore={highScore}
         />
-        <ScoreCounter score={score} highScore={highScore} />
+        {/* <ScoreCounter score={score} highScore={highScore} /> */}
       </div>
     </div>
   );

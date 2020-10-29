@@ -1,6 +1,7 @@
 import React from 'react';
+import ScoreCounter from './ScoreCounter';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div id='header'>
       <div id='titleText'>
@@ -9,6 +10,7 @@ const Header = () => {
       <div id='instructionText'>
         <p>Don't click anything more than once!</p>
       </div>
+      <ScoreCounter score={props.score} highScore={props.highScore} />
     </div>
   );
 };
