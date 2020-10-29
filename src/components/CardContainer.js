@@ -56,7 +56,10 @@ const CardContainer = (props) => {
     if (!clickedCards.includes(targetCard)) {
       setClickedCards([...clickedCards, targetCard]);
       props.setScore(props.score + 1);
-    } else if (clickedCards.includes(targetCard)) {
+    } else if (
+      clickedCards.includes(targetCard) &&
+      props.highScore < clickedCards.length
+    ) {
       props.setHighScore(clickedCards.length);
       setClickedCards([]);
       props.setScore(0);
